@@ -177,8 +177,8 @@ export interface RoadRect {
 
 export const MAIN_ROAD_W = 13
 export const roads: RoadRect[] = [
-  // 厂前市政主干道（贯穿东西）
-  { x: SITE_CX, z: 100, w: SITE_W + 34, d: MAIN_ROAD_W, dash: true, edge: true },
+  // 厂前市政主干道（贯穿东西）——中心 z = 127（与 buildings.ts 路灯、车辆环线南段保持一致）
+  { x: SITE_CX, z: 127, w: SITE_W + 34, d: MAIN_ROAD_W, dash: true, edge: true },
   // 厂区东西向主干道：光伏区以南，止于东环
   { x: -53, z: -44, w: 232, d: 9, dash: true, edge: true },
   // 光伏区区块间南北向检修道路
@@ -199,9 +199,9 @@ export const roads: RoadRect[] = [
   { x: PV.originX - 7, z: (PV_AREA.minZ + PV_AREA.maxZ) / 2, w: 6, d: PV_AREA.maxZ - PV_AREA.minZ + 6 },
   { x: (PV_AREA.minX + PV_AREA.maxX) / 2, z: PV_AREA.minZ - 6, w: PV_AREA.maxX - PV_AREA.minX + 24, d: 6 },
   { x: PV_AREA.maxX + 1, z: (PV_AREA.minZ + PV_AREA.maxZ) / 2, w: 6, d: PV_AREA.maxZ - PV_AREA.minZ + 12 },
-  // 厂区西环 / 东环
+  // 厂区西环 / 东环（东环向南延长，接上新市政主干道）
   { x: -172, z: -8, w: 7.5, d: 258, dash: true },
-  { x: 62, z: 20, w: 8, d: 172, dash: true },
+  { x: 62, z: 20, w: 8, d: 196, dash: true },
   // 设备区南北向连接路（把逆变器 / 储能 / PCS 串到主干道）
   { x: 53, z: -78, w: 8, d: 74 },
   // 储能区北侧通道
@@ -210,8 +210,8 @@ export const roads: RoadRect[] = [
   { x: 116, z: -3, w: 108, d: 9, dash: true, edge: true },
   // 厂前区东西向路（运维楼—综合楼—停车场—大门）
   { x: 0, z: 34, w: 200, d: 8, dash: true },
-  // 大门引道
-  { x: 74, z: 90, w: 11, d: 26 },
+  // 大门引道（向南延长，接上新市政主干道；北端与停车场保持间距）
+  { x: 74, z: 92, w: 11, d: 52 },
   // 停车场内部通道
   { x: 98, z: 70, w: 50, d: 6 },
   // 运维楼前广场引道

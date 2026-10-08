@@ -175,9 +175,9 @@ function buildLamps(parent: THREE.Object3D) {
   const list: { p: [number, number, number]; ry: number }[] = []
   const push = (x: number, z: number, ry: number) => list.push({ p: [x, 0, z], ry })
 
-  // 市政主干道两侧
-  for (let x = -172; x <= 192; x += 26) push(x, 100 - MAIN_ROAD_W / 2 - 1.6, 0)
-  for (let x = -160; x <= 192; x += 26) push(x, 100 + MAIN_ROAD_W / 2 + 1.6, Math.PI)
+  // 市政主干道两侧（道路中心线 z = 127，与 layout.ts 保持一致）
+  for (let x = -172; x <= 192; x += 26) push(x, 127 - MAIN_ROAD_W / 2 - 1.6, 0)
+  for (let x = -160; x <= 192; x += 26) push(x, 127 + MAIN_ROAD_W / 2 + 1.6, Math.PI)
   // 厂区东西主干道北侧
   for (let x = -166; x <= 58; x += 30) push(x, -48.5 - 1.4, 0)
   // 东环
